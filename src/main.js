@@ -1,4 +1,4 @@
-
+/* global phaser */
 
 var config = {
         type: phaser.AUTO,
@@ -7,7 +7,8 @@ var config = {
         physics: {
             default: 'arcade',
             arcade: {
-                gravity: { y: 200 }
+                gravity: { y: 200 },
+                debug:false
             }
         },
         scene: {
@@ -33,8 +34,8 @@ var config = {
         //Mostrar en pantalla
         this.add.image(400, 300, 'fondo');
         player = this.physics.add.sprite(100, 450, 'personaje');
-        player.setBounce(0);
-        player.setCollideWorldBounds(true);
+//        player.setBounce(0);
+//        player.setCollideWorldBounds(true);
         
         
     this.anims.create({
