@@ -1,5 +1,3 @@
-/* global Phaser */
-
 var config = {
         type: Phaser.AUTO,
         width: screen.width - 15,
