@@ -1,4 +1,5 @@
 
+
 var config = {
         type: phaser.AUTO,
         width: screen.width - 15,
@@ -17,12 +18,12 @@ var config = {
     };
 
     var game = new phaser.Game(config);
-//    var player;
-//    var cursors;
+    var player;
+    var cursors;
     function preload ()
     {
         //Carga los recursos necesarios
-        this.load.image('fondo', '../img/fondo.png');
+        this.load.image('fondo', './img/fondo.png');
         this.load.spritesheet('personaje', './img/Correr_1.png',{ frameWidth: 32, frameHeight: 48 });
 
     }
@@ -30,7 +31,7 @@ var config = {
     function create ()
     {
         //Mostrar en pantalla
-        this.add.image(0, 0, 'fondo');
+        this.add.image(400, 300, 'fondo');
         player = this.physics.add.sprite(100, 450, 'personaje');
         player.setBounce(0);
         player.setCollideWorldBounds(true);
