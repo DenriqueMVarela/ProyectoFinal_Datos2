@@ -2,6 +2,7 @@
 
 var config = {
         type: phaser.AUTO,
+        parent: 'container',
         width: screen.width - 15,
         height: screen.height/1.2,
         physics: {
