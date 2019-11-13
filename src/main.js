@@ -1,11 +1,10 @@
-
-
-/* global Phaser */
+/* global phaser */
 
 var config = {
-        type: Phaser.AUTO,
-        width:1300,
-        height:600,
+        type: phaser.AUTO,
+        parent: 'container',
+        width: screen.width - 15,
+        height: screen.height/1.2,
         physics: {
             default: 'arcade',
             arcade: {
@@ -20,14 +19,14 @@ var config = {
         }
     };
 
-    var game = new Phaser.Game(config);
+    var game = new phaser.Game(config);
     var player;
     var cursors;
     function preload ()
     {
         //Carga los recursos necesarios
         this.load.image('fondo', './img/fondo.png');
-        this.load.spritesheet('personaje', './img/CorrerP.png',{ frameWidth: 32, frameHeight: 48 });
+        this.load.spritesheet('personaje', './img/Correr_1.png',{ frameWidth: 32, frameHeight: 48 });
 
     }
 
@@ -36,40 +35,28 @@ var config = {
         //Mostrar en pantalla
         this.add.image(400, 300, 'fondo');
         player = this.physics.add.sprite(100, 450, 'personaje');
-        player.setBounce(0);
-        player.setCollideWorldBounds(true);
+//        player.setBounce(0);
+//        player.setCollideWorldBounds(true);
         
         
-   this.anims.create({
-    key: 'left',
-    frames: this.anims.generateFrameNumbers('personaje', { start:7, end: 0 }),
-    frameRate: 10,
-    repeat: -1
-});
-
-this.anims.create({
+    this.anims.create({
     key: 'turn',
-    frames: [ { key: 'personaje', frame: 8 } ],
+    frames: [ { key: 'personaje', frame: 0 } ],
     frameRate: 20
-});
-
-this.anims.create({
+       });  
+       
+    this.anims.create({
     key: 'right',
-    frames: this.anims.generateFrameNumbers('personaje', { start: 9, end:16 }),
+    frames: this.anims.generateFrameNumbers('personaje', { start: 1, end: 8 }),
     frameRate: 10,
     repeat: -1
-});
+        });
       
       cursors = this.input.keyboard.createCursorKeys();
 
     }
     
-    function update (){
-     if (cursors.left.isDown){
-    player.setVelocityX(-160);
-    player.anims.play('left', true);}
-    
-        else
+    function update (){    
     if (cursors.right.isDown){
     player.setVelocityX(160);
     player.anims.play('right', true);}
