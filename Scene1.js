@@ -8,7 +8,7 @@ class Scene1 extends Phaser.Scene{
         this.load.image('BotonPlay','./img/sprBtnPlay.png');
         this.load.image('BotonPlay2','./img/sprBtnPlayHover.png');
         this.load.image('BotonPlay3','./img/sprBtnPlayDown.png');
-
+        
         this.load.audio('SM','./Audio/SonidoMenú.mp3');
 //        this.scene.start("Scene2");
     }

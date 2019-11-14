@@ -28,7 +28,7 @@ class Scene2 extends Phaser.Scene{
         piso.create(400, 537, 'fondoP1');
         piso.create(945,575,'fondoP3');
         player = this.physics.add.sprite(100, 350, 'Personaje');
-        
+        player.setSize(23,0);
 //        correr=this.sound.add('correr');
 //        this.keySpace;
 //      bullet= this.add.group();
@@ -91,6 +91,8 @@ this.anims.create({
       
       cursors = this.input.keyboard.createCursorKeys();
       this.physics.add.collider(player, piso);
+//      this.cameras.main.setBounds();
+//      this.cameras.main;
       
     }
     
