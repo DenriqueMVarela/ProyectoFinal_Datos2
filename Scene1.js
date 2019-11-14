@@ -26,7 +26,7 @@ class Scene1 extends Phaser.Scene{
         this.btnPlay.setInteractive ();
         
         this.btnPlay.on("pointerover", function() {
-        this.btnPlay.setTexture("BotonPlay2"); // set the button texture to sprBtnPlayHover
+        this.btnPlay.setTexture("BotonPlay2"); 
          }, this);
          
           this.btnPlay.on ("pointerout", function (){ 
